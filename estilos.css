@@ -1,0 +1,444 @@
+/* ========================================
+   PIZZALAB - ESTILOS PROFESIONALES (MÓVIL & PC)
+   ========================================
+*/
+
+/* --- RESET Y CONFIGURACIÓN BASE --- */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  -webkit-tap-highlight-color: transparent; /* Mejora la experiencia táctil */
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Fondo principal con efecto fijo */
+  background: url('https://i.ibb.co/4qbxn1N/1000069362.jpg') center/cover fixed;
+  padding-top: 110px; /* Espacio para que la navbar no tape el contenido */
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Capa de contraste para legibilidad sobre el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)); 
+  z-index: 0;
+}
+
+body > * { 
+  position: relative; 
+  z-index: 1; 
+}
+
+/* --- NAVBAR ULTRA-OPTIMIZADA PARA MÓVIL --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 15, 15, 0.9); 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 12px 5px; /* Menos espacio arriba/abajo */
+  z-index: 9999;
+  backdrop-filter: blur(15px); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem; /* Un poco más pequeño para dejar espacio */
+  letter-spacing: 6px; /* PIZZALAB elegante */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* --- ESTILOS PARA ICONOS SOCIALES EN NAVBAR --- */
+.nav-social {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.nav-social a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-social a:hover .fa-instagram { color: #e4405f; }
+.nav-social a:hover .fa-facebook-f { color: #1877f2; }
+
+.nav-links {
+  display: flex;
+  gap: 8px; 
+  width: 100%;
+  
+  /* Alineación al inicio para permitir scroll correcto */
+  justify-content: flex-start; 
+  
+  /* Padding lateral para que "Carta" no pegue al borde */
+  padding: 0 15px 5px 15px; 
+  
+  overflow-x: auto; 
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone */
+  scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+}
+
+/* Ocultar barra de scroll en Chrome/Safari */
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff; 
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+  transition: all 0.3s ease; /* Transición suave para el color */
+}
+
+/* --- EFECTO HOVER SOLICITADO --- */
+.nav-links a:hover {
+  color: #ffc107; /* Cambia a dorado */
+  background: rgba(255, 255, 255, 0.2); /* Fondo ligeramente más claro */
+}
+
+/* --- AJUSTE PC (Volvemos al centrado/derecha) --- */
+@media(min-width: 768px) {
+  .nav-links {
+    justify-content: flex-end; /* En PC los links van a la derecha */
+    padding: 0;
+    overflow-x: visible; /* Quitamos el scroll en PC */
+  }
+  
+  .nav-links a {
+    background: transparent;
+    font-size: 13px;
+  }
+
+  /* Ajuste iconos en PC */
+  .nav-social {
+    position: static;
+    margin-left: 20px;
+  }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 50vh;
+  background: url('https://i.ibb.co/mFVP8ZFX/1000069360.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px 20px;
+  width: 90%;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.overlay h1 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.overlay p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* --- CONTENEDORES (GLASSMORPHISM) --- */
+.container {
+  width: 94%; 
+  margin: 20px auto;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.07); 
+  border-radius: 28px;
+  backdrop-filter: blur(20px); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+  /* AJUSTE PARA QUE LA SECCIÓN NO QUEDE TAPADA */
+  scroll-margin-top: 140px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  border-left: 5px solid #e63946;
+  padding-left: 15px;
+  text-align: left;
+}
+
+h3 {
+  color: #ffc107;
+  font-size: 1.1rem;
+  margin: 30px 0 15px 0;
+  text-transform: uppercase;
+}
+
+/* --- ITEMS DEL MENÚ --- */
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu-item div strong {
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.menu-item div p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 3px;
+}
+
+.menu-item span {
+  font-weight: 700;
+  color: #ffc107;
+  font-size: 0.95rem;
+  align-self: flex-end;
+}
+
+/* --- GRIDS (PEDIDOS Y REVIEWS) --- */
+.pedido-grid, .reviews-grid {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.pedido-card, .review-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+}
+
+.review-card h3 {
+  color: #e63946;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.review-card p:nth-child(2) {
+  color: #ffc107; /* Color de las estrellas */
+  margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+footer {
+  padding: 50px 20px;
+  background: #000;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 4px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* --- ADAPTACIÓN PC (MIN-WIDTH: 768PX) --- */
+@media(min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 80px;
+    height: 90px;
+  }
+  
+  .logo {
+    margin-bottom: 0;
+    font-size: 1.7rem;
+    letter-spacing: 12px;
+  }
+
+  .nav-links {
+    width: auto;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    background: transparent;
+    padding: 10px 15px;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    padding: 50px;
+    /* Ajuste de scroll para PC */
+    scroll-margin-top: 110px;
+  }
+
+  .menu-item {
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-item span {
+    align-self: center;
+  }
+
+  .pedido-grid, .reviews-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .pedido-card, .review-card {
+    flex: 1 1 300px;
+  }
+}
+/* --- BOTÓN DE LLAMADA --- */
+.btn-llamar {
+  display: inline-block;
+  background-color: #25d366;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-llamar:hover {
+  background-color: #128c7e;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.pedido-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- BOTONES DE APPS --- */
+.apps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  transition: transform 0.2s, opacity 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-app:active {
+  transform: scale(0.96);
+}
+
+.btn-glovo { background-color: #ffc244; color: #00a082; }
+.btn-uber { background-color: #06c167; color: #fff; }
+.btn-justeat { background-color: #f36d00; color: #fff; }
+
+@media(min-width: 480px) {
+  .apps-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-app {
+    flex: 1 1 120px;
+    font-size: 12px;
+  }
+}
+
+/* --- REDES SOCIALES --- */
+.social-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 35px;
+  padding-bottom: 20px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 220px;
+  padding: 14px 0;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.btn-facebook { background-color: #1877F2; }
+
+.btn-social:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+@media(min-width: 600px) {
+  .social-buttons-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
