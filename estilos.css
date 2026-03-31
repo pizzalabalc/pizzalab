@@ -738,3 +738,36 @@ h2 {
     text-align: left;
   }
 }
+/* Contenedor principal en cuadrícula */
+.nosotros-galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+  gap: 15px; /* Espacio entre las fotos */
+  margin-top: 30px;
+  padding: 0 15px;
+  max-width: 1000px; /* Para que no se estiren infinito en pantallas grandes */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajuste de las fotos individuales */
+.foto-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Esto las hace cuadrados perfectos automáticamente */
+  object-fit: cover;
+  object-position: center top; /* Mantiene el enfoque arriba como pediste */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.foto-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Si quieres que en móviles muy pequeños salgan de 1 en 1, añade esto: */
+@media (max-width: 480px) {
+  .nosotros-galeria {
+    grid-template-columns: 1fr; /* Una sola columna en móviles pequeños */
+  }
+}
