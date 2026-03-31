@@ -25,14 +25,13 @@
     <span>PIZZALAB</span>
   </a>
 </div>
-</div>
   <div class="nav-links">
-  <a href="javascript:void(0)" onclick="document.getElementById('carta').scrollIntoView({behavior: 'smooth'});">Carta</a>
-  <a href="javascript:void(0)" onclick="document.getElementById('pedido').scrollIntoView({behavior: 'smooth'});">Pide tu pizza</a>
-  <a href="javascript:void(0)" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">Dónde estamos</a>
-  <a href="javascript:void(0)" onclick="document.getElementById('nosotros').scrollIntoView({behavior: 'smooth'});">Sobre nosotros</a>
-  <a href="javascript:void(0)" onclick="document.getElementById('reviews').scrollIntoView({behavior: 'smooth'});">Opiniones</a>
-</div>
+    <a href="#carta">Carta</a>
+    <a href="#pedido">Pide tu pizza</a>
+    <a href="#contacto">Dónde estamos</a>
+    <a href="#nosotros">Sobre nosotros</a>
+    <a href="#reviews">Opiniones</a>
+  </div>
 <div class="nav-social">
     <a href="https://www.instagram.com/pizzalab.alicante/?utm_source=ig_web_button_share_sheet" target="_blank" title="Instagram">
       <i class="fab fa-instagram"></i> </a>
@@ -348,3 +347,29 @@
 <script src="script.js"></script>
 </body>
 </html>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault(); // Esto es lo que evita que el # aparezca en la URL
+
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetId === "#") {
+        // Si es el logo, sube al inicio
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else if (targetElement) {
+        // Si es una sección (carta, contacto...), se desplaza hasta ella
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+      
+      // OPCIONAL: Esto limpia la URL si ya tenía un # de antes
+      window.history.replaceState(null, null, window.location.pathname);
+    });
+  });
+</script>
