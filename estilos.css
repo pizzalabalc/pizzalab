@@ -47,7 +47,8 @@ body > * {
   display: flex;
   flex-direction: column; 
   align-items: center;
-  padding: 12px 5px; /* Menos espacio arriba/abajo */
+  /* Aumentamos el padding superior e inferior (de 12px a 18px) */
+  padding: 18px 5px 12px 5px; 
   z-index: 9999;
   backdrop-filter: blur(15px); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -467,7 +468,9 @@ footer {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center; /* Asegura centrado en la navbar */
+  justify-content: center;
+  /* Añadimos más separación con los links de abajo */
+  margin-bottom: 18px !important; 
 }
 
 /* 3. RESET TOTAL DEL ENLACE (Para que no sea morado ni subrayado) */
@@ -490,7 +493,9 @@ footer {
   text-transform: uppercase;
   letter-spacing: 6px;
   color: #ffffff !important;
-  white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+  white-space: nowrap;
+  /* Asegura que el texto no se pegue al borde superior */
+  line-height: 1; 
 }
 
 /* 5. La imagen */
