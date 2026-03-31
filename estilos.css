@@ -511,37 +511,124 @@ footer {
 }
 
 /* --- AJUSTE PARA PC --- */
+/* ============================================================
+   NAVBAR & LOGO (CORRECCIÓN FINAL MÓVIL Y PC)
+   ============================================================ */
+
+/* 1. Navbar Base (Móvil) */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 15, 15, 0.9); 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 18px 5px 12px 5px; /* Más aire arriba y abajo */
+  z-index: 9999;
+  backdrop-filter: blur(15px); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Logo Contenedor */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px; /* Espacio para que no pegue con los links abajo */
+}
+
+/* 3. RESET ENLACE LOGO (Evita morado, azul y subrayado) */
+.logo a, 
+.logo a:visited, 
+.logo a:hover, 
+.logo a:active {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.logo a span {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+
+/* 4. AJUSTE PC PARA NAVBAR Y LOGO (768px) */
 @media(min-width: 768px) {
-  .logo img {
-    height: 45px;      /* Un poco más grande en pantallas de ordenador */
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center !important; /* CENTRADO VERTICAL REAL */
+    padding: 0 80px;
+    height: 90px;
   }
+
   .logo {
+    margin-bottom: 0 !important; /* Quita el margen de móvil */
+    height: 100%;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .logo a span {
     font-size: 1.7rem;
     letter-spacing: 12px;
   }
 }
-/* --- ESTILOS LEYENDA Y NOTAS SUPERIORES --- */
+
+/* ============================================================
+   TÍTULOS H2 (CENTRADO CON LÍNEA ROJA INFERIOR)
+   ============================================================ */
+h2 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+  /* Línea roja debajo del texto */
+  border-bottom: 3px solid #e63946;
+  width: fit-content;      /* La línea solo mide lo que mide el texto */
+  margin-left: auto;       /* Margen auto + width fit-content = CENTRADO */
+  margin-right: auto;
+  padding-bottom: 8px;
+  display: block;
+}
+
+/* ============================================================
+   LEYENDA Y NOTAS SUPERIORES (CARTA)
+   ============================================================ */
 .carta-header-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
   margin-bottom: 30px;
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.leyenda-tamanos {
-  font-size: 14px;
-  opacity: 0.8;
+@media(max-width: 767px) {
+  .carta-header-info {
+    text-align: center;
+  }
 }
 
-.notas-masas {
-  font-size: 13px;
-  color: #ff3131; /* Rojo Intenso para resaltar el extra */
-  line-height: 1.4;
-}
-
-/* Alineación a la derecha en pantallas grandes */
 @media(min-width: 768px) {
   .carta-header-info {
     flex-direction: row;
@@ -553,11 +640,15 @@ footer {
   }
 }
 
-/* Centrado en móvil para que no se corte */
-@media(max-width: 767px) {
-  .carta-header-info {
-    text-align: center;
-  }
+.leyenda-tamanos {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.notas-masas {
+  font-size: 13px;
+  color: #ff3131;
+  line-height: 1.4;
 }
 /* --- NUEVA ESTRUCTURA DE LEYENDA --- */
 .carta-header-info {
