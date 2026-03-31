@@ -20,8 +20,7 @@
 
 <nav class="navbar">
   <div class="logo">
-  <a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-    <img src="logo-v1.png" alt="Logo PizzaLab">
+  <a href="#"> <img src="logo-v1.png" alt="Logo PizzaLab">
     <span>PIZZALAB</span>
   </a>
 </div>
@@ -345,31 +344,28 @@
 </footer>
 
 <script src="script.js"></script>
-</body>
-</html>
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault(); // Esto es lo que evita que el # aparezca en la URL
+      e.preventDefault(); // Detiene el comportamiento normal (poner el #)
 
       const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-
-      if (targetId === "#") {
-        // Si es el logo, sube al inicio
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      } else if (targetElement) {
-        // Si es una sección (carta, contacto...), se desplaza hasta ella
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
       
-      // OPCIONAL: Esto limpia la URL si ya tenía un # de antes
+      // Si el href es solo "#", subimos al inicio
+      if (targetId === "#") {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Si apunta a una sección, nos desplazamos a ella
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      // ESTA LÍNEA ES LA MAGIA: Borra el # de la URL sin recargar la página
       window.history.replaceState(null, null, window.location.pathname);
     });
   });
 </script>
+</body>
+</html>
