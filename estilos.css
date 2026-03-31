@@ -514,7 +514,19 @@ footer {
 /* ============================================================
    NAVBAR & LOGO (CORRECCIÓN FINAL MÓVIL Y PC)
    ============================================================ */
+.nav-links a, 
+.logo a {
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+}
 
+/* Evita que el color cambie al hacer clic */
+.nav-links a:active, 
+.logo a:active {
+  color: #ff3131; /* O el color que prefieras para el feedback */
+}
 /* 1. Navbar Base (Móvil) */
 .navbar {
   position: fixed;
@@ -528,6 +540,10 @@ footer {
   z-index: 9999;
   backdrop-filter: blur(15px); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logo a {
+  cursor: pointer !important;
+  /* El resto de tu estilo se mantiene igual */
 }
 
 /* 2. Logo Contenedor */
