@@ -462,27 +462,39 @@ footer {
     justify-content: center;
   }
 }
-.logo a {
+.logo {
   display: flex;
-  align-items: center;    /* Alinea logo y texto al centro vertical */
-  gap: 12px;              /* Espacio exacto entre el logo y la palabra PIZZALAB */
-  text-decoration: none;  /* QUITA EL SUBRAYADO AZUL */
-  color: #fff;            /* MANTIENE EL TEXTO BLANCO */
+  align-items: center;
+}
+
+/* 3. EL ARREGLO PARA EL ENLACE (Aquí estaba el fallo) */
+.logo a {
+  display: flex !important;    /* Fuerza a que el logo y el texto estén en línea */
+  align-items: center !important;
+  gap: 12px;                  /* Espacio entre imagen y texto */
+  text-decoration: none !important; /* QUITA EL SUBRAYADO */
+  color: #ffffff !important;  /* FUERZA EL BLANCO (Evita el morado) */
+  outline: none;              /* Quita el recuadro al pulsar */
+}
+
+/* 4. Estilos del texto (PIZZALAB) */
+.logo a span {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 6px;
-  transition: opacity 0.2s ease; /* Feedback táctil al pulsar */
+  color: #ffffff !important; /* Doble refuerzo para el color */
 }
 
-/* Efecto opcional: se aclara un poco al pulsar en el móvil */
-.logo a:active {
-  opacity: 0.7;
-}
-
+/* 5. Estilos de la imagen */
 .logo img {
-  height: 32px;        /* Altura similar a la del texto */
-  width: auto;         /* Mantiene la proporción */
+  height: 32px;
+  width: auto;
   display: block;
+}
+
+/* 6. Feedback visual al tocar en el móvil (opcional) */
+.logo a:active {
+  opacity: 0.8;
 }
 
 /* --- AJUSTE PARA PC --- */
