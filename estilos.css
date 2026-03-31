@@ -444,3 +444,30 @@ footer {
     justify-content: center;
   }
 }
+/* --- ESTILO DEL LOGO PERSONALIZADO --- */
+.logo {
+  display: flex;
+  align-items: center; /* Alinea logo y texto al centro vertical */
+  gap: 12px;           /* Espacio exacto entre el logo y la palabra PIZZALAB */
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.logo img {
+  height: 32px;        /* Altura similar a la del texto para que no desentone */
+  width: auto;         /* Mantiene la proporción de tu imagen */
+  display: block;
+}
+
+/* --- AJUSTE PARA PC --- */
+@media(min-width: 768px) {
+  .logo img {
+    height: 45px;      /* Un poco más grande en pantallas de ordenador */
+  }
+  .logo {
+    font-size: 1.7rem;
+    letter-spacing: 12px;
+  }
+}
