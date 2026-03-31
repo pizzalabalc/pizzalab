@@ -53,14 +53,7 @@ body > * {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.1rem; /* Un poco más pequeño para dejar espacio */
-  letter-spacing: 6px; /* PIZZALAB elegante */
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  color: #fff;
-}
+
 
 /* --- ESTILOS PARA ICONOS SOCIALES EN NAVBAR --- */
 .nav-social {
@@ -462,30 +455,37 @@ footer {
     justify-content: center;
   }
 }
+/* 2. El contenedor del logo */
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center; /* Asegura centrado en la navbar */
 }
 
-/* 3. EL ARREGLO PARA EL ENLACE (Aquí estaba el fallo) */
-.logo a {
-  display: flex !important;    /* Fuerza a que el logo y el texto estén en línea */
+/* 3. RESET TOTAL DEL ENLACE (Para que no sea morado ni subrayado) */
+.logo a, 
+.logo a:visited, 
+.logo a:hover, 
+.logo a:active {
+  display: flex !important;
   align-items: center !important;
-  gap: 12px;                  /* Espacio entre imagen y texto */
-  text-decoration: none !important; /* QUITA EL SUBRAYADO */
-  color: #ffffff !important;  /* FUERZA EL BLANCO (Evita el morado) */
-  outline: none;              /* Quita el recuadro al pulsar */
+  gap: 12px !important;
+  text-decoration: none !important; /* Adiós subrayado */
+  color: #ffffff !important;         /* Adiós morado, hola blanco */
+  border: none !important;
+  outline: none !important;
 }
 
-/* 4. Estilos del texto (PIZZALAB) */
+/* 4. El texto (PIZZALAB) */
 .logo a span {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 6px;
-  color: #ffffff !important; /* Doble refuerzo para el color */
+  color: #ffffff !important;
+  white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
 }
 
-/* 5. Estilos de la imagen */
+/* 5. La imagen */
 .logo img {
   height: 32px;
   width: auto;
