@@ -175,15 +175,17 @@ body > * {
   opacity: 0.9;
 }
 
-/* --- CONTENEDORES (GLASSMORPHISM) --- */
+/* --- CONTENEDORES (GLASSMORPHISM AJUSTADO) --- */
 .container {
   width: 94%; 
   margin: 20px auto;
   padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.07); 
+  /* Fondo más transparente (0.04 en vez de 0.07) */
+  background: rgba(255, 255, 255, 0.04); 
   border-radius: 28px;
-  backdrop-filter: blur(20px); 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Blur reducido (8px en vez de 20px) para ver mejor el fondo */
+  backdrop-filter: blur(8px); 
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 
   /* AJUSTE PARA QUE LA SECCIÓN NO QUEDE TAPADA */
@@ -223,7 +225,7 @@ h3 {
 
 .menu-item div p {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7); /* Ligeramente más claro para leer mejor sobre fondo visible */
   margin-top: 3px;
 }
 
