@@ -18,7 +18,7 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   /* Fondo principal con efecto fijo */
-  background: url('https://i.ibb.co/4qbxn1N/1000069362.jpg') center/cover fixed;
+  background: url('1000069362.jpg') center/cover fixed;
   padding-top: 110px; /* Espacio para que la navbar no tape el contenido */
   color: #fff;
   line-height: 1.6;
@@ -145,7 +145,7 @@ body > * {
 /* --- HERO SECTION --- */
 .hero {
   height: 50vh;
-  background: url('https://i.ibb.co/mFVP8ZFX/1000069360.jpg') center/cover no-repeat;
+  background: url('1000069360.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
