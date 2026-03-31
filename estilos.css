@@ -204,9 +204,27 @@ h2 {
 
 h3 {
   color: #ff3131; /* Rojo Intenso */
-  font-size: 1.8rem; /* Aumentado a 1.8rem */
+  font-size: 1.8rem; /* Tamaño aumentado solicitado */
   margin: 30px 0 15px 0;
   text-transform: uppercase;
+}
+
+/* --- NUEVA CORRECCIÓN: HORARIO A LA DERECHA EN PC --- */
+.pedido-flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media(min-width: 768px) {
+  .pedido-flex-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .horario-box {
+    text-align: right;
+  }
 }
 
 /* --- ITEMS DEL MENÚ --- */
