@@ -118,16 +118,16 @@ body > * {
 
 /* --- EFECTO HOVER --- */
 .nav-links a:hover {
-  color: #9B111E; /* Rojo Rubí */
-  background: rgba(255, 255, 255, 0.2); 
+  color: #ff3131; /* Rojo Intenso */
+  background: rgba(255, 255, 255, 0.2); /* Fondo ligeramente más claro */
 }
 
-/* --- AJUSTE PC --- */
+/* --- AJUSTE PC (Volvemos al centrado/derecha) --- */
 @media(min-width: 768px) {
   .nav-links {
-    justify-content: flex-end;
+    justify-content: flex-end; /* En PC los links van a la derecha */
     padding: 0;
-    overflow-x: auto;
+    overflow-x: visible; /* Quitamos el scroll en PC */
   }
   
   .nav-links a {
@@ -135,6 +135,7 @@ body > * {
     font-size: 13px;
   }
 
+  /* Ajuste iconos en PC */
   .nav-social {
     position: static;
     margin-left: 20px;
@@ -174,7 +175,7 @@ body > * {
   opacity: 0.9;
 }
 
-/* --- CONTENEDORES --- */
+/* --- CONTENEDORES (GLASSMORPHISM) --- */
 .container {
   width: 94%; 
   margin: 20px auto;
@@ -184,6 +185,8 @@ body > * {
   backdrop-filter: blur(20px); 
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+  /* AJUSTE PARA QUE LA SECCIÓN NO QUEDE TAPADA */
   scroll-margin-top: 140px;
 }
 
@@ -198,7 +201,7 @@ h2 {
 }
 
 h3 {
-  color: #9B111E; /* Rojo Rubí */
+  color: #ff3131; /* Rojo Intenso */
   font-size: 1.1rem;
   margin: 30px 0 15px 0;
   text-transform: uppercase;
@@ -226,7 +229,7 @@ h3 {
 
 .menu-item span {
   font-weight: 700;
-  color: #9B111E; /* Rojo Rubí */
+  color: #ff3131; /* Rojo Intenso */
   font-size: 0.95rem;
   align-self: flex-end;
 }
@@ -253,9 +256,8 @@ h3 {
   font-size: 1.1rem;
 }
 
-/* ESTRELLAS AMARILLAS MANTENIDAS */
 .review-card p:nth-child(2) {
-  color: #ffc107; 
+  color: #ffc107; /* Estrellas Amarillas */
   margin-bottom: 10px;
 }
 
@@ -270,7 +272,7 @@ footer {
   text-transform: uppercase;
 }
 
-/* --- ADAPTACIÓN PC --- */
+/* --- ADAPTACIÓN PC (MIN-WIDTH: 768PX) --- */
 @media(min-width: 768px) {
   .navbar {
     flex-direction: row;
@@ -301,6 +303,7 @@ footer {
     width: 80%;
     max-width: 1000px;
     padding: 50px;
+    /* Ajuste de scroll para PC */
     scroll-margin-top: 110px;
   }
 
@@ -323,7 +326,6 @@ footer {
     flex: 1 1 300px;
   }
 }
-
 /* --- BOTÓN DE LLAMADA --- */
 .btn-llamar {
   display: inline-block;
@@ -344,6 +346,13 @@ footer {
   background-color: #128c7e;
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.pedido-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- BOTONES DE APPS --- */
@@ -371,9 +380,25 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+.btn-app:active {
+  transform: scale(0.96);
+}
+
 .btn-glovo { background-color: #ffc244; color: #00a082; } 
 .btn-uber { background-color: #06c167; color: #fff; }
 .btn-justeat { background-color: #f36d00; color: #fff; }
+
+@media(min-width: 480px) {
+  .apps-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-app {
+    flex: 1 1 120px;
+    font-size: 12px;
+  }
+}
 
 /* --- REDES SOCIALES --- */
 .social-buttons-container {
