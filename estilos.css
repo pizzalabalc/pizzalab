@@ -190,9 +190,17 @@ h2 {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 25px;
-  border-left: 5px solid #e63946;
-  padding-left: 15px;
-  text-align: left;
+  /* Cambiamos el borde lateral por uno inferior para que el centrado sea real */
+  border-bottom: 3px solid #e63946; 
+  display: inline-block; /* Esto hace que el borde solo ocupe el ancho del texto */
+  padding-bottom: 8px;
+  text-align: center;
+  
+  /* Centrado del bloque h2 dentro de su contenedor */
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content; /* El borde se ajusta al tamaño de la palabra */
 }
 
 h3 {
