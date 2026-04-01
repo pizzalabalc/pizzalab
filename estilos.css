@@ -773,12 +773,13 @@ h2 {
 }
 .fade {
   opacity: 0;
-  transform: translateY(10px); /* Menos movimiento para evitar fallos */
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Mucho más rápido */
+  /* Reducimos el desplazamiento al mínimo para que no haya popping */
+  transform: translateY(5px); 
+  /* Animación ultra rápida: 0.2 segundos */
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   will-change: opacity, transform;
 }
 
-/* Fuerza a que si algo falla, se vea al hacer un mínimo de scroll */
 .fade.visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
