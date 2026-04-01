@@ -771,3 +771,14 @@ h2 {
     grid-template-columns: 1fr; /* Una sola columna en móviles pequeños */
   }
 }
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final: cuando el JS añade la clase 'visible' */
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
