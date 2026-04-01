@@ -428,18 +428,24 @@
       window.history.replaceState(null, null, window.location.pathname);
     });
   });
-window.addEventListener('DOMContentLoaded', () => {
+</script>
+<script>
+  // Busca todos los elementos con la clase "fade"
   const faders = document.querySelectorAll('.fade');
+
+  // Crea el vigilante (Observer)
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
+      // Si el elemento entra en pantalla (es visible)
       if(entry.isIntersecting){
+        // Le añade la clase 'visible' para activar el CSS
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.2 });
-  faders.forEach(el => observer.observe(el));
-});
-</script>
+  }, { threshold: 0.2 }); // Se activa cuando se ve el 20% de la foto
 
+  // Le dice al vigilante qué elementos vigilar
+  faders.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
