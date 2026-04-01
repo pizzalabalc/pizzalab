@@ -773,14 +773,13 @@ h2 {
 }
 .fade {
   opacity: 0;
-  transform: translateY(15px); /* Menos recorrido = más velocidad */
-  /* Bajamos de 0.8s a 0.4s para que sea instantáneo pero elegante */
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out; 
+  transform: translateY(10px); /* Menos movimiento para evitar fallos */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Mucho más rápido */
   will-change: opacity, transform;
 }
 
-/* Estado final: cuando el JS añade la clase 'visible' */
+/* Fuerza a que si algo falla, se vea al hacer un mínimo de scroll */
 .fade.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
