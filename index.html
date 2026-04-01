@@ -405,7 +405,6 @@
   <p>PIZZALAB © 2020</p>
 </footer>
 
-<script src="script.js"></script>
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -442,7 +441,7 @@
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.2 }); // Se activa cuando se ve el 20% de la foto
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
   // Le dice al vigilante qué elementos vigilar
   faders.forEach(el => observer.observe(el));
