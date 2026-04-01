@@ -405,6 +405,7 @@
   <p>PIZZALAB © 2020</p>
 </footer>
 
+<script src="script.js"></script>
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -427,24 +428,6 @@
       window.history.replaceState(null, null, window.location.pathname);
     });
   });
-</script>
-<script>
-  // Busca todos los elementos con la clase "fade"
-  const faders = document.querySelectorAll('.fade');
-
-  // Crea el vigilante (Observer)
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      // Si el elemento entra en pantalla (es visible)
-      if(entry.isIntersecting){
-        // Le añade la clase 'visible' para activar el CSS
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-  // Le dice al vigilante qué elementos vigilar
-  faders.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
