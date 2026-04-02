@@ -39,6 +39,11 @@
       "latitude": 38.3499169,
       "longitude": -0.4957767
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "250"
+    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -53,7 +58,6 @@
   }
 ]
 </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilos.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -380,34 +384,49 @@
 </section>
 <!-- VALORACIONES -->
 <section id="reviews" class="container fade">
-  <h2>⭐ Valoraciones de clientes</h2>
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+    <h2>⭐ Valoraciones Reales</h2>
+    
+  </div>
 
   <div class="reviews-grid">
-
     <div class="review-card">
-      <h3>Laura M.</h3>
-      <p>⭐⭐⭐⭐⭐</p>
+      <h3 style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 5px 0; color: #e63946; font-size: 1.1rem;">
+        Laura M. <i class="fab fa-google" style="color:#4285F4; font-size: 0.8em;"></i>
+      </h3>
+      <p style="color: #ffc107; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
       <p>“La mejor pizza de Alicante, ingredientes súper frescos.”</p>
     </div>
 
     <div class="review-card">
-      <h3>Javier R.</h3>
-      <p>⭐⭐⭐⭐⭐</p>
+      <h3 style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 5px 0; color: #e63946; font-size: 1.1rem;">
+        Javier R. <i class="fab fa-google" style="color:#4285F4; font-size: 0.8em;"></i>
+      </h3>
+      <p style="color: #ffc107; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
       <p>“La Burratella es una locura, volveré seguro.”</p>
     </div>
 
     <div class="review-card">
-      <h3>María G.</h3>
-      <p>⭐⭐⭐⭐</p>
+      <h3 style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 5px 0; color: #e63946; font-size: 1.1rem;">
+        María G. <i class="fab fa-google" style="color:#4285F4; font-size: 0.8em;"></i>
+      </h3>
+      <p style="color: #ffc107; margin-bottom: 10px;">⭐⭐⭐⭐</p>
       <p>“Muy buena calidad y opciones veganas top.”</p>
     </div>
 
     <div class="review-card">
-      <h3>David S.</h3>
-      <p>⭐⭐⭐⭐⭐</p>
+      <h3 style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 5px 0; color: #e63946; font-size: 1.1rem;">
+        David S. <i class="fab fa-google" style="color:#4285F4; font-size: 0.8em;"></i>
+      </h3>
+      <p style="color: #ffc107; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
       <p>“Servicio rápido y pizzas espectaculares.”</p>
     </div>
+  </div>
 
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://www.google.com/search?sca_esv=b78cf8500232fcdc&sxsrf=ANbL-n6ISXng_zXV9KEGwUg2pbMxD___VA:1775066471979&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdomg40yez_dkzBsiqZsiqMqISToFojEK62X8JKnikneI0oBRCvqcaP_F-zNGQk7k0-2c-8P7s7SScqgnFSEVz6ClaOC&q=Pizzalab+Rese%C3%B1as&sa=X&ved=2ahUKEwjgio_0nc2TAxXVUKQEHS_QJZ0Q0bkNegQIPBAH&biw=1920&bih=911&dpr=1" target="_blank" style="color: rgba(255,255,255,0.6); text-decoration: underline; font-size: 0.9em;">
+      Ver todas las reseñas en Google
+    </a>
   </div>
 </section>
 <footer>
