@@ -426,9 +426,23 @@
     </a>
   </div>
 </section>
-<footer>
-  <p>PIZZALAB © 2020</p>
+<footer style="padding: 60px 20px; background: rgba(0,0,0,0.8); text-align: center; border-top: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+  <div style="margin-bottom: 25px;">
+    <p style="font-size: 14px; letter-spacing: 3px; color: #fff; text-transform: uppercase; font-weight: 700; margin-bottom: 10px;">
+      PIZZALAB ALICANTE © 2026
+    </p>
+    <p style="font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 1px;">
+      Avenida Condes de Soto Ameno, 38, 03005 Alicante (San Blas)
+    </p>
+  </div>
+
+  <nav style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+    <a href="aviso-legal.html" style="text-decoration: none; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 8px 15px; border-radius: 10px; background: rgba(255,255,255,0.1); transition: 0.3s;">Aviso Legal</a>
+    <a href="privacidad.html" style="text-decoration: none; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 8px 15px; border-radius: 10px; background: rgba(255,255,255,0.1); transition: 0.3s;">Privacidad</a>
+    <a href="cookies.html" style="text-decoration: none; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 8px 15px; border-radius: 10px; background: rgba(255,255,255,0.1); transition: 0.3s;">Cookies</a>
+  </nav>
 </footer>
+
 
 <script src="script.js"></script>
 <script>
@@ -454,5 +468,33 @@
     });
   });
 </script>
+<!-- Banner de Cookies para Pizza Lab Alicante -->
+<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 5%; width: 90%; background: rgba(15, 15, 15, 0.95); color: #fff; padding: 20px; border-radius: 20px; z-index: 10000; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <p style="font-size: 13px; margin-bottom: 15px; line-height: 1.4;">Cocinamos cookies para mejorar tu experiencia. ¿Nos das permiso?</p>
+  <div style="display: flex; gap: 10px;">
+    <button onclick="acceptCookies()" style="background: #ff3131; color: #fff; border: none; padding: 10px 20px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 12px;">Aceptar</button>
+    <button onclick="rejectCookies()" style="background: rgba(255,255,255,0.1); color: #fff; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-size: 12px;">Rechazar</button>
+  </div>
+</div>
+
+
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+    // Aquí el programador debe activar Google Analytics o Maps si los usas
+  }
+
+  function rejectCookies() {
+    localStorage.setItem('cookiesAccepted', 'false');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  // Comprobar si ya aceptó
+  if (localStorage.getItem('cookiesAccepted') === 'true' || localStorage.getItem('cookiesAccepted') === 'false') {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>

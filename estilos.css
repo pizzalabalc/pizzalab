@@ -784,3 +784,16 @@ h2 {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+.navbar {
+  -webkit-backdrop-filter: blur(15px); /* Desenfoque para iPhone */
+}
+
+.review-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-google-review:active {
+  transform: scale(0.95);
+}
